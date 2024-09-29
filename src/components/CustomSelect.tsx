@@ -1,8 +1,14 @@
 import styled from 'styled-components';
-
 import Select from 'react-select';
+// import { Region } from '../types';
+import { Props } from 'react-select';
+import { RegOptions } from '../types';
 
-export const CustomSelect = styled(Select).attrs({
+function MySelect(props: Props<RegOptions, false>) {
+    return <Select {...props} />;
+}
+
+export const CustomSelect = styled(MySelect).attrs({
     styles: {
         control: (provided) => ({
             ...provided,

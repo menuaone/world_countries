@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { CountryInfo } from '../types';
 
 const Wrapper = styled.article`
     border-radius: var(--radii);
@@ -43,7 +44,11 @@ const CardListItem = styled.li`
     }
 `;
 
-const Card = ({ img, name, info = [], onClick }) => {
+interface CardProps extends CountryInfo {
+    onClick: () => void;
+}
+
+const Card = ({ img, name, info = [], onClick }: CardProps) => {
     return (
         <Wrapper onClick={onClick}>
             <CardImage

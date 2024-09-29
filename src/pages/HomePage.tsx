@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -6,12 +6,20 @@ import Controls from '../components/Controls';
 import List from '../components/List';
 import Card from '../components/Card';
 import { ALL_COUNTRIES } from '../config';
+import { Country, CountryInfo } from '../types';
 
-export const HomePage = ({ countries, setCountries }) => {
+interface HomePageProps {
+    countries: Country[];
+    setCountries: Dispatch<SetStateAction<Country[]>>;
+}
+
+export type MySearch = (search?: string, region?: string) => void;
+
+export const HomePage = ({ countries, setCountries }: HomePageProps) => {
     const [filteredCountries, setFilteredCountries] = useState(countries);
     const navigate = useNavigate();
 
-    const handleSearch = (search, region) => {
+    const handleSearch: MySearch = (search, region) => {
         let data = [...countries];
 
         if (region) {
@@ -23,12 +31,11 @@ export const HomePage = ({ countries, setCountries }) => {
                 c.name.toLowerCase().includes(search.toLowerCase())
             );
         }
-
         setFilteredCountries(data);
     };
 
     useEffect(() => {
-        if (!countries.length)
+        if (!countries?.length)
             axios.get(ALL_COUNTRIES).then(({ data }) => setCountries(data));
         // eslint-disable-next-line
     }, []);
@@ -43,7 +50,7 @@ export const HomePage = ({ countries, setCountries }) => {
             <Controls onSearch={handleSearch} />
             <List>
                 {filteredCountries.map((c) => {
-                    const countryInfo = {
+                    const countryInfo: CountryInfo = {
                         img: c.flags.png,
                         name: c.name,
                         info: [
@@ -64,10 +71,9 @@ export const HomePage = ({ countries, setCountries }) => {
 
                     return (
                         <Card
-                            key={c.name}
                             {...countryInfo}
                             onClick={() => {
-                                navigate(`/country/${c.name}`);
+                                void navigate(`/country/${c.name}`);
                             }}
                         />
                     );

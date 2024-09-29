@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
@@ -21,7 +22,11 @@ const Wrapper = styled.section`
     }
 `;
 
-const List = ({ children }) => {
+interface ListProps {
+    children: ReactNode;
+}
+
+const List = ({ children }: ListProps) => {
     return <Wrapper>{children}</Wrapper>;
 };
 

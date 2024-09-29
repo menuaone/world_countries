@@ -5,9 +5,10 @@ import { HomePage } from './pages/HomePage';
 import { Details } from './pages/Details';
 import { ErrorPage } from './pages/ErrorPage';
 import { useState } from 'react';
+import { Country } from './types';
 
 function App() {
-    const [countries, setCountries] = useState([]);
+    const [countries, setCountries] = useState<Country[]>([]);
 
     return (
         <>

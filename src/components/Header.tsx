@@ -16,7 +16,11 @@ const Wrapper = styled.div`
     padding: 2rem 0;
 `;
 
-const Title = styled(Link).attrs({
+interface AttrProps {
+    to?: string;
+}
+
+const Title = styled(Link).attrs<AttrProps>({
     to: '/',
 })`
     color: var(--colors-text);

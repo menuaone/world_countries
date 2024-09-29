@@ -2,8 +2,11 @@ import { useEffect, useState } from 'react';
 import Search from './Search';
 import { CustomSelect } from './CustomSelect';
 import styled from 'styled-components';
+import { RegOptions } from '../types';
+import { MySearch } from '../pages/HomePage';
 
-const options = [
+//
+const options: RegOptions[] = [
     { value: 'Africa', label: 'Africa' },
     { value: 'America', label: 'America' },
     { value: 'Asia', label: 'Asia' },
@@ -23,13 +26,23 @@ const Wrapper = styled.div`
     }
 `;
 
-const Controls = ({ onSearch }) => {
-    const [search, setSearch] = useState('');
-    const [region, setRegion] = useState('');
+interface ControlsProps {
+    onSearch: MySearch;
+}
 
+const Controls = ({ onSearch }: ControlsProps) => {
+    const [search, setSearch] = useState('');
+    const [region, setRegion] = useState<RegOptions | null>();
+
+    //
     useEffect(() => {
-        const regionValue = region?.value || '';
-        onSearch(search, regionValue);
+        if (region) {
+            const regionValue = region?.value || '';
+            onSearch(search, regionValue);
+        } else {
+            const regionValue = '';
+            onSearch(search, regionValue);
+        }
         // eslint-disable-next-line
     }, [search, region]);
 
@@ -39,12 +52,14 @@ const Controls = ({ onSearch }) => {
                 search={search}
                 setSearch={setSearch}
             />
+
             <CustomSelect
                 options={options}
                 placeholder='Filter by Region'
                 isClearable
                 isSearchable={false}
                 value={region}
+                // библиотека
                 onChange={setRegion}
             />
         </Wrapper>

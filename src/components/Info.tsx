@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { filterByCode } from '../config';
 import { useNavigate } from 'react-router-dom';
+import { Country } from '../types';
 
 const Wrapper = styled.section`
     margin-top: 3rem;
@@ -89,7 +90,12 @@ const Tag = styled.span`
     cursor: pointer;
 `;
 
-export const Info = (props) => {
+type DataProps = {
+    c: object;
+    name: string;
+};
+
+export const Info = (props: Country) => {
     const {
         name,
         nativeName,
@@ -104,14 +110,13 @@ export const Info = (props) => {
         borders = [],
     } = props;
 
-    console.log('#### props:', props);
     const [neighbors, setNeighbors] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
         if (borders.length)
             axios.get(filterByCode(borders)).then(({ data }) => {
-                setNeighbors(data.map((c) => c.name));
+                setNeighbors(data.map((c: DataProps) => c.name));
             });
     }, [borders]);
 

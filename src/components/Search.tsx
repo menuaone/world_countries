@@ -31,12 +31,21 @@ const Input = styled.input.attrs({
     background-color: var(--colors-ui-base);
 `;
 
-const Search = ({ search, setSearch }) => {
+interface SearchProps {
+    search: string;
+    setSearch: React.Dispatch<React.SetStateAction<string>>;
+}
+
+type MyInputSearch = React.ChangeEventHandler<HTMLInputElement>;
+
+const Search = ({ search, setSearch }: SearchProps) => {
+    const handleInputSearch: MyInputSearch = (e) => setSearch(e.target.value);
+
     return (
         <InputContainer>
             <IoSearch />
             <Input
-                onChange={(e) => setSearch(e.target.value)}
+                onChange={handleInputSearch}
                 value={search}
             />
         </InputContainer>
