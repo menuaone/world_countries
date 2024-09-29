@@ -16,3 +16,10 @@ react-router-dom
 axios  
 react-icons  
 react-select  
+
+_App work presentation:_
+
+https://github.com/user-attachments/assets/88ad8c03-9e7d-4b92-b55c-ee6d3d2f9807
+
+
+
