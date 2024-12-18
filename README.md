@@ -1,6 +1,7 @@
 _Web application to search for information about any country_
 
-How beautiful our world is!
+
+How beautiful our world is! Dont u see!
 
 ### `App features`
 
