@@ -3,6 +3,7 @@ _Web application to search for information about any country_
 Welcome my friends, pleasure to see u there!
 Coding is my passion!
 I love testing, JS, pyton
+All i need is coffee & laptop...and some cookies :)
 
 ### `App features`
 
