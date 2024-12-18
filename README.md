@@ -1,5 +1,6 @@
 _Web application to search for information about any country_
 
+
 How beautiful our world is! Dont u see!
 
 ### `App features`
@@ -18,6 +19,9 @@ react-router-dom
 axios  
 react-icons  
 react-select  
+
+Coding is my passion
+All i need is coffee, laptop...and some cookies :)
 
 _App work presentation:_
 
