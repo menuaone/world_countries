@@ -1,9 +1,6 @@
 _Web application to search for information about any country_
 
-Welcome my friends, pleasure to see u there!
-Coding is my passion!
-I love testing, JS, pyton
-All i need is coffee & laptop...and some cookies :)
+How beautiful our world is!
 
 ### `App features`
 
@@ -17,10 +14,13 @@ All i need is coffee & laptop...and some cookies :)
 
 create-react-app  
 styled-component  
-react-router-dom  s
+react-router-dom
 axios  
 react-icons  
 react-select  
+
+Coding is my passion
+All i need is coffee, laptop...and some cookies :)
 
 _App work presentation:_
 
