@@ -1,5 +1,7 @@
 _Web application to search for information about any country_
 
+Welcome my friends, pleasure to see u there!
+
 ### `App features`
 
 1. Switch the theme to light and dark colors
@@ -7,8 +9,6 @@ _Web application to search for information about any country_
 3. Filter countries by name or region
 4. Click on a country card to see more information about that country
 5. View border countries in the country card
-
-_some dumb text here_
 
 ### `NPM Packages`
 
