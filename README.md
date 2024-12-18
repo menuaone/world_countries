@@ -1,7 +1,8 @@
 _Web application to search for information about any country_
 
-
-How beautiful our world is! Dont u see!
+How beautiful our world is! 
+Dont u see!?
+Just look around!
 
 ### `App features`
 
@@ -20,6 +21,7 @@ axios
 react-icons  
 react-select  
 
+secret:
 Coding is my passion
 All i need is coffee, laptop...and some cookies :)
 
