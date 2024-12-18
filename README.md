@@ -1,5 +1,6 @@
 _Web application to search for information about any country_
 
+How beautiful our world is!
 
 ### `App features`
 
@@ -13,7 +14,7 @@ _Web application to search for information about any country_
 
 create-react-app  
 styled-component  
-react-router-dom  s
+react-router-dom
 axios  
 react-icons  
 react-select  
