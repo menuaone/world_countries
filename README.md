@@ -1,6 +1,6 @@
 _Web application to search for information about any country_
 
-Welcome my friends, pleasure to see u there!
+Welcome my friends, pleasure to see u there! Coding is my passion!
 
 ### `App features`
 
