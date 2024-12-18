@@ -8,11 +8,13 @@ _Web application to search for information about any country_
 4. Click on a country card to see more information about that country
 5. View border countries in the country card
 
+_some dumb text here_
+
 ### `NPM Packages`
 
 create-react-app  
 styled-component  
-react-router-dom  
+react-router-dom  s
 axios  
 react-icons  
 react-select  
